@@ -26,7 +26,7 @@ $ conda install cookiecutter
 ### To start a new project, run:
 ------------
 
-    cookiecutter https://github.com/drivendata/cookiecutter-data-science
+    cookiecutter https://github.com/rlagrois/cookiecutter-data-science
 
 
 [![asciicast](https://asciinema.org/a/9bgl5qh17wlop4xyxu9n9wr02.png)](https://asciinema.org/a/9bgl5qh17wlop4xyxu9n9wr02)
@@ -52,9 +52,9 @@ The directory structure of your new project looks like this:
 ├── models             <- Trained and serialized models, model predictions, or model summaries
 │
 ├── notebooks          <- Jupyter notebooks. Naming convention is a number (for ordering),
-│                         the creator's initials, and a short `-` delimited description, e.g.
-│                         `1.0-jqp-initial-data-exploration`.
-│
+│   │                      the creator's initials, and a short `-` delimited description, e.g.
+│   │                      `1.0-jqp-initial-data-exploration`. Includes template file
+│   └── template.ipynb
 ├── references         <- Data dictionaries, manuals, and all other explanatory materials.
 │
 ├── reports            <- Generated analysis as HTML, PDF, LaTeX, etc.
@@ -65,6 +65,9 @@ The directory structure of your new project looks like this:
 │
 ├── src                <- Source code for use in this project.
 │   ├── __init__.py    <- Makes src a Python module
+│   │
+│   ├── cust           <- Custom Functions
+│   │   └──test.py
 │   │
 │   ├── data           <- Scripts to download or generate data
 │   │   └── make_dataset.py
@@ -77,8 +80,8 @@ The directory structure of your new project looks like this:
 │   │   ├── predict_model.py
 │   │   └── train_model.py
 │   │
-│   └── visualization  <- Scripts to create exploratory and results oriented visualizations
-│       └── visualize.py
+│   └── viz  <- Scripts to create exploratory and results oriented visualizations
+│       └── viz.py
 │
 └── tox.ini            <- tox file with settings for running tox; see tox.testrun.org
 ```
