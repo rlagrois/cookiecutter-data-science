@@ -1,9 +1,8 @@
-"""
-Remy Lagrois
-"""
+
 import itertools
 import numpy as np
 import matplotlib.pyplot as plt
+from sklearn.metrics import confusion_matrix
 
 def test():
     print("viz works!")
@@ -41,10 +40,22 @@ def plt_confusion(cm, classes,
     plt.ylabel('True label')
     plt.xlabel('Predicted label')
     plt.tight_layout()
-    
+
+def confusion(names,true,pred,
+              title="Confusion Matrix",
+              norm=False,prec=2,fig=True,show=True,
+              cmap=plt.cm.Blues):
+    cnf_matrix = confusion_matrix(true, pred)
+    np.set_printoptions(precision=prec)
+    if fig:
+        plt.figure()
+    plt_confusion(cnf_matrix, classes=names, normalize=norm, title=title,cmap=cmap)
+    if show:
+        plt.show()
     
     
 def available():
     print('Available viz.viz Functions:')
     print('test() - tests if module is imported properly')
     print("plt_confusion(cm, classes, normalize=False, title='Confusion matrix', cmap=plt.cm.Blues) - confusion matrix")
+    print("confusion(names,true,pred, title='Confusion Matrix', \n\tnorm=False,prec=2,fig=True,show=True,\n\tcmap=plt.cm.Blues) - creates and runs confusion matrix plotting")
