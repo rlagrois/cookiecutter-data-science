@@ -1,9 +1,13 @@
 """ 
 Remy Lagrois
+Use for creating functions to prep cleaned data for use
 """
 
-import pandas as pd
 import os
+import pandas as pd
+from sklearn_pandas import DataFrameMapper
+
+
 
 def test():
     print('prep works')
